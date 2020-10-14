@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<AnchorPane prefHeight="670.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainUIController">
+    <children>
+        <AnchorPane prefHeight="650.0" prefWidth="1100.0" style="-fx-border-color: linear-gradient(#f8bd55, #c0fe56, #5dfbc1, #64c2f8, #be4af7, #ed5fc2, #ef504c, #f2660f);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+
+            <children>
+                <AnchorPane layoutX="347.0" prefHeight="525.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <TableView fx:id="tbStudent" editable="true" layoutX="-6.0" onMousePressed="#tableClick" prefHeight="650.0" prefWidth="780.0" style="-fx-border-color: linear-gradient(to top left,#f8bd55, #c0fe56, #5dfbc1, #64c2f8, #be4af7, #ed5fc2, #ef504c, #f2660f);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                    </children>
+                </AnchorPane>
+                <TabPane layoutX="7.0" layoutY="8.0" prefHeight="525.0" prefWidth="320.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                        <Tab style="-fx-border-color: linear-gradient(#f8bd55, #c0fe56, #5dfbc1, #64c2f8, #be4af7, #ed5fc2, #ef504c, #f2660f);" text="Quản lý">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to top right, bisque, #ffb9eb, #6460e9); -fx-border-color: white;">
+                                    <children>
+                                        <GridPane layoutX="11.0" prefHeight="395.0" prefWidth="281.0" AnchorPane.bottomAnchor="176.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Label prefHeight="25.0" prefWidth="105.0" scaleX="1.2" scaleY="1.7" text="CPA" GridPane.rowIndex="5">
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                    <padding>
+                                                        <Insets left="5.0" />
+                                                    </padding>
+                                                </Label>
+                                                <Label prefHeight="25.0" prefWidth="105.0" scaleX="1.2" scaleY="1.7" text="Họ tên sinh viên" GridPane.rowIndex="1">
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                    <padding>
+                                                        <Insets left="5.0" />
+                                                    </padding>
+                                                </Label>
+                                                <Label prefHeight="25.0" prefWidth="105.0" scaleX="1.2" scaleY="1.7" text="Mã số sinh viên">
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                    <padding>
+                                                        <Insets left="5.0" />
+                                                    </padding>
+                                                </Label>
+                                                <Label prefHeight="25.0" prefWidth="105.0" scaleX="1.2" scaleY="1.7" text="Ngày sinh" GridPane.rowIndex="2">
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                    <padding>
+                                                        <Insets left="5.0" />
+                                                    </padding>
+                                                </Label>
+                                                <Label prefHeight="25.0" prefWidth="105.0" scaleX="1.2" scaleY="1.7" text="Giới tính" GridPane.rowIndex="3">
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                    <padding>
+                                                        <Insets left="5.0" />
+                                                    </padding>
+                                                </Label>
+                                                <Label prefHeight="25.0" prefWidth="105.0" scaleX="1.2" scaleY="1.7" text="Tên lớp" GridPane.rowIndex="4">
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                    <padding>
+                                                        <Insets left="5.0" />
+                                                    </padding>
+                                                </Label>
+                                                <TextField fx:id="tfMssv" GridPane.columnIndex="1">
+                                                    <tooltip>
+                                                        <Tooltip text="Ví dụ : 20122726">
+                                                            <font>
+                                                                <Font size="17.0" />
+                                                            </font>
+                                                        </Tooltip>
+                                                    </tooltip>
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="tfName" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                    <tooltip>
+                                                        <Tooltip text="Ví dụ: Nguyễn Gia Tuyến">
+                                                            <font>
+                                                                <Font size="17.0" />
+                                                            </font>
+                                                        </Tooltip>
+                                                    </tooltip>
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                </TextField>
+                                                <DatePicker fx:id="dpBirth" promptText="dd-mm-yyyy" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                </DatePicker>
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                    <children>
+                                                        <RadioButton fx:id="rbM" mnemonicParsing="false" scaleX="1.3" scaleY="1.3" text="Nam">
+                                                            <toggleGroup>
+                                                                <ToggleGroup fx:id="toggle" />
+                                                            </toggleGroup>
+                                                        </RadioButton>
+                                                        <RadioButton fx:id="rbF" mnemonicParsing="false" scaleX="1.3" scaleY="1.3" text="Nữ" toggleGroup="$toggle" />
+                                                    </children>
+                                                </HBox>
+                                                <TextField fx:id="tfClass" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                    <tooltip>
+                                                        <Tooltip text="Ví dụ: CNTT 1.01">
+                                                            <font>
+                                                                <Font size="17.0" />
+                                                            </font>
+                                                        </Tooltip>
+                                                    </tooltip>
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                </TextField>
+                                                <TextField fx:id="tfCpa" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                    <tooltip>
+                                                        <Tooltip text="Ví dụ: 2.78">
+                                                            <font>
+                                                                <Font size="17.0" />
+                                                            </font>
+                                                        </Tooltip>
+                                                    </tooltip>
+                                                    <GridPane.margin>
+                                                        <Insets />
+                                                    </GridPane.margin>
+                                                </TextField>
+                                                <Separator prefWidth="200.0" GridPane.rowIndex="6" />
+                                                <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                <ImageView fx:id="ivName" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                    <image>
+                                                        <Image url="@../image/exitIcon.png" />
+                                                    </image>
+                                                    <GridPane.margin>
+                                                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                                                    </GridPane.margin>
+                                                </ImageView>
+                                                <ImageView fx:id="ivMssv" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                                    <image>
+                                                        <Image url="@../image/exitIcon.png" />
+                                                    </image>
+                                                    <GridPane.margin>
+                                                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                                                    </GridPane.margin>
+                                                </ImageView>
+                                                <ImageView fx:id="ivClass" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                                    <image>
+                                                        <Image url="@../image/exitIcon.png" />
+                                                    </image>
+                                                    <GridPane.margin>
+                                                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                                                    </GridPane.margin>
+                                                </ImageView>
+                                                <ImageView fx:id="ivCpa" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                                    <image>
+                                                        <Image url="@../image/exitIcon.png" />
+                                                    </image>
+                                                    <GridPane.margin>
+                                                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                                                    </GridPane.margin>
+                                                </ImageView>
+                                            </children>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="111.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.0" minWidth="10.0" prefWidth="170.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                        <ImageView fitHeight="78.0" fitWidth="297.0" layoutX="12.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0">
+                                            <image>
+                                                <Image url="@../image/dock.png" />
+                                            </image>
+                                            <effect>
+                                                <DropShadow color="#1086c28b" height="136.39" radius="70.66" spread="1.0" width="148.25" />
+                                            </effect>
+                                        </ImageView>
+                                        <ImageView fx:id="ivInsert" fitHeight="50.0" fitWidth="50.0" layoutX="37.0" layoutY="464.0" onMousePressed="#insertTable" pickOnBounds="true" preserveRatio="true" styleClass="iv" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="30.0">
+                                            <image>
+                                                <Image url="@../image/insert.png" />
+                                            </image>
+                                            <effect>
+                                                <Reflection />
+                                            </effect>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </ImageView>
+                                        <ImageView fx:id="ivChange" fitHeight="45.0" fitWidth="44.0" layoutX="101.0" layoutY="465.0" onMousePressed="#changeTable" pickOnBounds="true" preserveRatio="true" styleClass="iv" AnchorPane.bottomAnchor="94.0" AnchorPane.leftAnchor="100.0">
+                                            <effect>
+                                                <Reflection />
+                                            </effect>
+                                            <image>
+                                                <Image url="@../image/change.png" />
+                                            </image>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </ImageView>
+                                        <ImageView fx:id="ivDelete" fitHeight="50.0" fitWidth="50.0" layoutX="171.0" layoutY="464.0" onMousePressed="#deleteTable" pickOnBounds="true" preserveRatio="true" styleClass="iv" AnchorPane.bottomAnchor="90.0" AnchorPane.rightAnchor="100.0">
+                                            <effect>
+                                                <Reflection />
+                                            </effect>
+                                            <image>
+                                                <Image url="@../image/remove.png" />
+                                            </image>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </ImageView>
+                                        <ImageView fx:id="ivReset" fitHeight="50.0" fitWidth="50.0" layoutX="236.0" layoutY="464.0" onMousePressed="#resetTexfField" pickOnBounds="true" preserveRatio="true" styleClass="iv" AnchorPane.bottomAnchor="90.0" AnchorPane.rightAnchor="30.0">
+                                            <effect>
+                                                <Reflection />
+                                            </effect>
+                                            <image>
+                                                <Image url="@../image/reset.png" />
+                                            </image>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab onSelectionChanged="#tabSearch" style="-fx-border-color: linear-gradient(#f8bd55, #c0fe56, #5dfbc1, #64c2f8, #be4af7, #ed5fc2, #ef504c, #f2660f);" text="Tìm kiếm">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom right, bisque, royalblue 10%, bisque);">
+                                    <children>
+                                        <ComboBox fx:id="cbSearch" layoutX="54.0" layoutY="138.0" onAction="#comboBoxChoose" promptText="Chọn thông tin cần tìm kiếm" scaleX="1.3" scaleY="1.1" visibleRowCount="7">
+                                            <rotationAxis>
+                                                <Point3D x="2.0" y="11.0" z="4.0" />
+                                            </rotationAxis>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                        </ComboBox>
+                                        <Label fx:id="labelLogo" layoutX="47.0" layoutY="91.0" prefHeight="30.0" prefWidth="77.0" text="Tìm kiếm">
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="tfSearch" disable="true" layoutX="25.0" layoutY="198.0" opacity="0.0" prefHeight="27.0" prefWidth="255.0" />
+                                        <Button fx:id="btSearch" disable="true" layoutX="201.0" layoutY="244.0" mnemonicParsing="false" onAction="#search" opacity="0.0" prefHeight="23.0" prefWidth="68.0" text="Tìm" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab style="-fx-border-color: linear-gradient(#f8bd55, #c0fe56, #5dfbc1, #64c2f8, #be4af7, #ed5fc2, #ef504c, #f2660f);" text="Quản lý tài khoản">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Accordion fx:id="manageAcc" layoutX="38.0" layoutY="150.0" prefHeight="571.0" prefWidth="320.0" style="-fx-background-color: linear-gradient(to bottom right, yellow, white, red);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <panes>
+                                                <TitledPane fx:id="tpChangePass" pickOnBounds="false" text="Thay đổi mật khẩu">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to top right, white, yellow, green);">
+                                                            <children>
+                                                                <Text fx:id="labelLogo1" layoutX="61.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thay đổi mật khẩu">
+                                                                    <font>
+                                                                        <Font size="24.0" />
+                                                                    </font>
+                                                                </Text>
+                                                                <GridPane fx:id="gridPane1" hgap="5.0" layoutX="22.0" layoutY="167.0" prefHeight="196.0" prefWidth="275.0" vgap="10.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0">
+                                                                    <children>
+                                                                        <Label prefHeight="25.0" prefWidth="129.0" scaleX="1.2" scaleY="1.5" text="Mật khẩu cũ" />
+                                                                        <Label prefHeight="25.0" prefWidth="129.0" scaleX="1.2" scaleY="1.5" text="Mật khẩu mới" GridPane.rowIndex="1" />
+                                                                        <Label prefHeight="25.0" prefWidth="129.0" scaleX="1.2" scaleY="1.5" text="Nhập lại" GridPane.rowIndex="2" />
+                                                                        <PasswordField fx:id="pwfOld" GridPane.columnIndex="1" />
+                                                                        <PasswordField fx:id="pwfNew" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                        <PasswordField fx:id="pwfAgainNew" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                                            <children>
+                                                                                <Button mnemonicParsing="false" onAction="#btChangePass" prefWidth="80.0" text="Thay đổi" />
+                                                                                <Button mnemonicParsing="false" onAction="#btResetChangePass" prefWidth="80.0" text="Hủy" />
+                                                                            </children>
+                                                                        </HBox>
+                                                                        <TextField fx:id="tfPwfOld" disable="true" visible="false" GridPane.columnIndex="1" />
+                                                                        <TextField fx:id="tfPwfNew" disable="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                        <TextField fx:id="tfPwfAgainNew" disable="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                        <ImageView fx:id="ivPwfOld" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                                                            <GridPane.margin>
+                                                                                <Insets right="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <image>
+                                                                                <Image url="@../image/appear.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                        <ImageView fx:id="ivPwfNew" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                                            <GridPane.margin>
+                                                                                <Insets right="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <image>
+                                                                                <Image url="@../image/appear.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                        <ImageView fx:id="ivPwfAgainNew" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                                                            <GridPane.margin>
+                                                                                <Insets right="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <image>
+                                                                                <Image url="@../image/appear.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </children>
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="85.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="207.0" minWidth="10.0" prefWidth="203.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="30.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="30.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="30.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                </GridPane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </TitledPane>
+                                                <TitledPane fx:id="tpCreateNewAcc" pickOnBounds="false" text="Thêm tài khoản mới">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, blue 0%,  red);">
+                                                            <children>
+                                                                <GridPane hgap="10.0" layoutX="12.0" layoutY="149.0" prefHeight="183.0" prefWidth="297.0" vgap="20.0">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="92.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="195.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <Label fx:id="labelLogo3" layoutX="20.0" layoutY="206.0" prefHeight="25.0" prefWidth="55.0" scaleX="1.2" scaleY="1.5" text="Mật khẩu" GridPane.rowIndex="1">
+                                                                            <rotationAxis>
+                                                                                <Point3D x="2.0" y="11.0" z="5.0" />
+                                                                            </rotationAxis>
+                                                                        </Label>
+                                                                        <HBox layoutX="120.0" layoutY="370.0" prefHeight="27.0" prefWidth="182.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                                            <children>
+                                                                                <Button mnemonicParsing="false" onAction="#btNewAcc" prefWidth="80.0" text="Thêm mới" />
+                                                                                <Button mnemonicParsing="false" onAction="#btResetNewAcc" prefWidth="80.0" text="Hủy" />
+                                                                            </children>
+                                                                            <GridPane.margin>
+                                                                                <Insets right="10.0" top="10.0" />
+                                                                            </GridPane.margin>
+                                                                        </HBox>
+                                                                        <Label fx:id="labelLogo4" layoutX="20.0" layoutY="257.0" prefHeight="25.0" prefWidth="51.0" scaleX="1.2" scaleY="1.5" text="Nhập lại" GridPane.rowIndex="2">
+                                                                            <rotationAxis>
+                                                                                <Point3D x="2.0" y="11.0" z="5.0" />
+                                                                            </rotationAxis>
+                                                                        </Label>
+                                                                        <Label fx:id="labelLogo2" layoutX="20.0" layoutY="155.0" prefHeight="25.0" prefWidth="85.0" scaleX="1.2" scaleY="1.5" text="Tên đăng nhập">
+                                                                            <rotationAxis>
+                                                                                <Point3D x="2.0" y="11.0" z="5.0" />
+                                                                            </rotationAxis>
+                                                                        </Label>
+                                                                        <TextField fx:id="tfNewAcc" layoutX="121.0" layoutY="155.0" prefHeight="25.0" prefWidth="180.0" promptText="Nhập vào tên tài khoản" GridPane.columnIndex="1" />
+                                                                        <PasswordField fx:id="pwfNewPass" layoutX="121.0" layoutY="206.0" prefHeight="25.0" prefWidth="180.0" promptText="Nhập vào mật khẩu" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                        <PasswordField fx:id="pwfNewAgainPass" layoutX="121.0" layoutY="257.0" prefHeight="25.0" prefWidth="180.0" promptText="Nhập lại mật khẩu" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                        <ImageView fx:id="ivNewAcc" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                                                                            <image>
+                                                                                <Image url="@../image/exitIcon.png" />
+                                                                            </image>
+                                                                            <GridPane.margin>
+                                                                                <Insets right="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </ImageView>
+                                                                        <TextField fx:id="tfNewPass" disable="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                        <TextField fx:id="tfNewAgainPass" disable="true" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                        <ImageView fx:id="ivNewAgainPass" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                                                            <image>
+                                                                                <Image url="@../image/appear.png" />
+                                                                            </image>
+                                                                            <GridPane.margin>
+                                                                                <Insets right="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </ImageView>
+                                                                        <ImageView fx:id="ivNewPass" fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                                                            <image>
+                                                                                <Image url="@../image/appear.png" />
+                                                                            </image>
+                                                                            <GridPane.margin>
+                                                                                <Insets right="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </ImageView>
+                                                                    </children>
+                                                                </GridPane>
+                                                                <Text layoutX="16.0" layoutY="89.0" scaleX="1.1" scaleY="1.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Thêm tài khoản mới" wrappingWidth="286.046875">
+                                                                    <font>
+                                                                        <Font size="31.0" />
+                                                                    </font>
+                                                                </Text>
+                                                                <Text fill="#221efc" layoutX="240.0" layoutY="508.0" onMouseClicked="#detailNewAcc" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detail &gt;&gt;" underline="true" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="27.62109375">
+                                                                    <cursor>
+                                                                        <Cursor fx:constant="HAND" />
+                                                                    </cursor>
+                                                                    <effect>
+                                                                        <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="3.26" surfaceScale="5.1">
+                                                                            <bumpInput>
+                                                                                <Shadow height="118.85" radius="36.6875" width="29.9" />
+                                                                            </bumpInput>
+                                                                        </Lighting>
+                                                                    </effect>
+                                                                </Text>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </TitledPane>
+                                                <TitledPane pickOnBounds="false" text="Thông tin tài khoản">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom right, green, yellow, white);">
+                                                            <children>
+                                                                <HBox layoutX="25.0" layoutY="275.0" prefHeight="35.0" prefWidth="210.0" spacing="25.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0">
+                                                                    <children>
+                                                                        <Text layoutX="14.0" layoutY="460.0" scaleX="1.5" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày" />
+                                                                        <Text fx:id="txDay" layoutX="42.0" layoutY="460.0" scaleX="1.5" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                                            <fill>
+                                                                                <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0" startX="0.30952380952380953" startY="0.7238095238095238">
+                                                                                    <stops>
+                                                                                        <Stop color="#dd3c3c" />
+                                                                                        <Stop color="#1625cc" offset="0.578544061302682" />
+                                                                                        <Stop color="#1625cc" offset="1.0" />
+                                                                                    </stops>
+                                                                                </LinearGradient>
+                                                                            </fill>
+                                                                        </Text>
+                                                                        <Text layoutX="72.0" layoutY="460.0" scaleX="1.5" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tháng" />
+                                                                        <Text fx:id="txMonth" layoutX="117.0" layoutY="462.0" scaleX="1.5" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                                            <fill>
+                                                                                <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0" startX="0.30952380952380953" startY="0.7238095238095238">
+                                                                                    <stops>
+                                                                                        <Stop color="#dd3c3c" />
+                                                                                        <Stop color="#1625cc" offset="0.578544061302682" />
+                                                                                        <Stop color="#1625cc" offset="1.0" />
+                                                                                    </stops>
+                                                                                </LinearGradient>
+                                                                            </fill>
+                                                                        </Text>
+                                                                        <Text layoutX="140.0" layoutY="460.0" scaleX="1.5" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Năm" />
+                                                                        <Text fx:id="txYear" layoutX="186.0" layoutY="470.0" scaleX="1.5" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                                            <fill>
+                                                                                <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0" startX="0.30952380952380953" startY="0.7238095238095238">
+                                                                                    <stops>
+                                                                                        <Stop color="#dd3c3c" />
+                                                                                        <Stop color="#1625cc" offset="0.578544061302682" />
+                                                                                        <Stop color="#1625cc" offset="1.0" />
+                                                                                    </stops>
+                                                                                </LinearGradient>
+                                                                            </fill>
+                                                                        </Text>
+                                                                    </children>
+                                                                </HBox>
+                                                                <GridPane layoutX="25.0" layoutY="57.0" prefHeight="364.0" prefWidth="234.0" AnchorPane.leftAnchor="5.0">
+                                                                    <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="129.0" minWidth="10.0" prefWidth="105.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.0" minWidth="0.0" prefWidth="5.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="124.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                    <children>
+                                                                        <Text fx:id="txAccAddr" layoutX="224.0" layoutY="151.0" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <font>
+                                                                                <Font size="16.0" />
+                                                                            </font></Text>
+                                                                        <Text layoutX="159.0" layoutY="86.0" scaleX="3.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </Text>
+                                                                        <Text fx:id="txAccMail" layoutX="213.0" layoutY="210.0" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <font>
+                                                                                <Font size="16.0" />
+                                                                            </font></Text>
+                                                                        <Text layoutX="159.0" layoutY="54.0" scaleX="3.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </Text>
+                                                                        <Text layoutX="25.0" layoutY="62.0" scaleX="1.2" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên tài khoản" wrappingWidth="90.13671875" />
+                                                                        <Text layoutX="19.0" layoutY="241.0" scaleX="1.2" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Khoa viện đào tạo" wrappingWidth="100.13671875" GridPane.rowIndex="6" />
+                                                                        <Text layoutX="148.0" layoutY="233.0" scaleX="3.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </Text>
+                                                                        <Text layoutX="159.0" layoutY="114.0" scaleX="3.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </Text>
+                                                                        <Text fx:id="txAccName" layoutX="224.0" layoutY="97.0" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <font>
+                                                                                <Font size="16.0" />
+                                                                            </font></Text>
+                                                                        <Text layoutX="18.0" layoutY="114.0" scaleX="1.2" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuổi" wrappingWidth="90.13671875" GridPane.rowIndex="2" />
+                                                                        <Text layoutX="159.0" layoutY="174.0" scaleX="3.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </Text>
+                                                                        <Text fx:id="txAcc_Name" layoutX="224.0" layoutY="65.0" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <font>
+                                                                                <Font size="16.0" />
+                                                                            </font></Text>
+                                                                        <Text fx:id="txCountSV" layoutX="224.0" layoutY="284.0" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <font>
+                                                                                <Font size="16.0" />
+                                                                            </font></Text>
+                                                                        <Text layoutX="18.0" layoutY="86.0" scaleX="1.2" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên giảng viên" wrappingWidth="90.13671875" GridPane.rowIndex="1" />
+                                                                        <Text fx:id="txAccAge" layoutX="224.0" layoutY="125.0" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <font>
+                                                                                <Font size="16.0" />
+                                                                            </font></Text>
+                                                                        <Text layoutX="159.0" layoutY="273.0" scaleX="3.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </Text>
+                                                                        <Text fx:id="txAccPhoneNumber" layoutX="224.0" layoutY="185.0" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <font>
+                                                                                <Font size="16.0" />
+                                                                            </font></Text>
+                                                                        <Text layoutX="19.0" layoutY="273.0" scaleX="1.2" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số lượng sinh viên" wrappingWidth="102.13671875" GridPane.rowIndex="7" />
+                                                                        <Text fx:id="txAccSubject" layoutX="213.0" layoutY="244.0" scaleY="1.6" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                            <font>
+                                                                                <Font size="16.0" />
+                                                                            </font></Text>
+                                                                        <Text layoutX="159.0" layoutY="140.0" scaleX="3.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </Text>
+                                                                        <Text layoutX="18.0" layoutY="174.0" scaleX="1.2" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số điện thoại" wrappingWidth="90.13671875" GridPane.rowIndex="4" />
+                                                                        <Text layoutX="40.0" layoutY="148.0" scaleX="1.2" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Địa chỉ" wrappingWidth="90.13671875" GridPane.rowIndex="3" />
+                                                                        <Text layoutX="19.0" layoutY="216.0" scaleX="1.2" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="90.13671875" GridPane.rowIndex="5" />
+                                                                        <Text scaleX="3.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                                            <GridPane.margin>
+                                                                                <Insets left="5.0" />
+                                                                            </GridPane.margin>
+                                                                        </Text>
+                                                                    </children>
+                                                                </GridPane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </TitledPane>
+                                            </panes>
+                                        </Accordion>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="About">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="603.0" prefWidth="332.0" style="-fx-background-color: white;">
+                                    <children>
+                                        <Text fontSmoothingType="LCD" layoutX="50.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Project 1" textAlignment="CENTER" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="49.26416015625">
+                                            <font>
+                                                <Font size="57.0" />
+                                            </font>
+                                            <effect>
+                                                <Reflection />
+                                            </effect>
+                                        </Text>
+                                        <GridPane layoutX="22.0" layoutY="168.0" prefHeight="234.0" prefWidth="277.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="170.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="146.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="154.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Label layoutX="194.0" layoutY="167.0" scaleY="2.0" text=": Nguyễn Gia Tuyến" GridPane.columnIndex="1">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="193.0" layoutY="246.0" scaleY="2.0" text=": Ts. Trần Việt Trung" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="38.0" layoutY="167.0" scaleY="2.0" text="Sinh viên thực hiện">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="38.0" layoutY="246.0" scaleY="2.0" text="Giảng viên hướng dẫn" GridPane.rowIndex="2">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label layoutX="200.0" layoutY="203.0" scaleY="2.0" text=": 20122726" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label scaleY="2.0" text="MSSV" GridPane.rowIndex="1">
+                                                    <font>
+                                                        <Font size="14.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </GridPane>
+                                        <GridPane layoutX="49.0" layoutY="533.05078125" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="48.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                            <children>
+                                                <Text fill="RED" layoutX="49.0" layoutY="546.05078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Đại học Bách Khoa Hà Nội" GridPane.halignment="CENTER" />
+                                                <Text fill="#0700da" layoutX="49.0" layoutY="563.05078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Viện công nghệ thông tin và truyền thông" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                            </children>
+                                        </GridPane>
+                                    </children></AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="bane" layoutX="110.0" layoutY="-100.0" prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <cursor>
+                <Cursor fx:constant="MOVE" />
+            </cursor>
+            <children>
+                <HBox layoutX="1035.0" AnchorPane.rightAnchor="5.0">
+                    <children>
+                        <ImageView fx:id="ivMin" fitHeight="20.0" fitWidth="20.0" layoutX="1035.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../image/minIcon.png" />
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </ImageView>
+                        <ImageView fx:id="ivExit" fitHeight="20.0" fitWidth="20.0" layoutX="707.0" layoutY="-55.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <image>
+                                <Image url="@../image/exitIcon.png" />
+                            </image>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+    <rotationAxis>
+        <Point3D x="1.0" y="1.0" />
+    </rotationAxis>
+</AnchorPane>

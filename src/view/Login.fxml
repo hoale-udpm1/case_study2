@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="490.0" styleClass="Anchor" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+    <children>
+        <GridPane hgap="5.0" layoutX="91.0" layoutY="153.0" prefHeight="127.0" prefWidth="290.0" vgap="5.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="91.0" AnchorPane.topAnchor="153.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="96.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="251.0" minWidth="10.0" prefWidth="219.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TextField fx:id="tfPass" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets right="10.0" />
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="tfUser" layoutX="236.0" layoutY="128.0" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets right="10.0" />
+                    </GridPane.margin>
+                </TextField>
+                <Label layoutX="137.0" layoutY="161.0" scaleX="1.3" scaleY="1.3" styleClass="text" text="Password" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="10.0" />
+                    </GridPane.margin>
+                </Label>
+                <PasswordField fx:id="pwfPass" layoutX="236.0" layoutY="166.0" onKeyReleased="#passWordEnter" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets right="10.0" />
+                    </GridPane.margin>
+                </PasswordField>
+                <Label layoutX="137.0" layoutY="123.0" scaleX="1.3" scaleY="1.3" styleClass="text" text="Username">
+                    <GridPane.margin>
+                        <Insets left="10.0" />
+                    </GridPane.margin>
+                </Label>
+                <Button fx:id="btLogin" mnemonicParsing="false" onAction="#ButtonHander" onMousePressed="#btPress" onMouseReleased="#btReslease" prefHeight="15.0" prefWidth="80.0" text="Login" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets right="10.0" />
+                    </GridPane.margin>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <ImageView fx:id="ivUser" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                    <image>
+                        <Image url="@../image/exitIcon.png" />
+                    </image>
+                    <GridPane.margin>
+                        <Insets right="14.0" />
+                    </GridPane.margin>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <ImageView fx:id="ivPass" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                    <image>
+                        <Image url="@../image/appear.png" />
+                    </image>
+                    <GridPane.margin>
+                        <Insets right="14.0" />
+                    </GridPane.margin>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </children>
+        </GridPane>
+        <HBox layoutX="448.0" layoutY="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <children>
+                <ImageView fx:id="ivMin" fitHeight="16.0" fitWidth="16.0" layoutX="438.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" x="10.0">
+                    <image>
+                        <Image url="@../image/minIcon.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <ImageView fx:id="ivExit" fitHeight="16.0" fitWidth="16.0" layoutX="360.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" x="10.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                    <image>
+                        <Image url="@../image/exitIcon.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </children>
+        </HBox>
+        <Label layoutX="258.0" layoutY="67.0" prefHeight="22.0" prefWidth="54.0" scaleX="3.5" scaleY="4.0" styleClass="text" text="Login" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="232.0" AnchorPane.leftAnchor="258.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="67.0">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font></Label>
+    </children>
+</AnchorPane>

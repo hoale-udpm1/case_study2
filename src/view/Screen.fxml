@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ScreenLogo">
+    <children>
+        <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="83.0" prefHeight="34.0" prefWidth="371.0" scaleY="1.4" styleClass="textFile" text="Chương trình quản lý">
+            <font>
+                <Font name="Arial" size="24.0" />
+            </font>
+        </Label>
+        <ProgressIndicator layoutX="202.0" layoutY="137.0" prefHeight="86.0" prefWidth="87.0" AnchorPane.bottomAnchor="97.0" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="201.0" AnchorPane.topAnchor="137.0">
+            <effect>
+                <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="40.0" surfaceScale="10.0">
+                    <bumpInput>
+                        <Shadow />
+                    </bumpInput>
+                    <light>
+                    </light>
+                </Lighting>
+            </effect>
+        </ProgressIndicator>
+        <HBox layoutX="445.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <children>
+                <ImageView fx:id="ivMin" fitHeight="20.0" fitWidth="20.0" layoutX="445.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../image/minIcon.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="ivExit" fitHeight="20.0" fitWidth="20.0" layoutX="291.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <image>
+                        <Image url="@../image/exitIcon.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
